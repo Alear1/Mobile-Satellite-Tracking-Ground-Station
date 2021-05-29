@@ -1,0 +1,69 @@
+Gpredict:
+
+Download GPredict version 1.4 https://sourceforge.net/projects/gpredict/files/Gpredict/1.4%20pre-releases/
+
+	HJ: Let's try the new version this time and see if it crashes.
+
+Extract downloaded folder 
+
+Run GPredict located in ~/gpredict-win32-1.4git/bin. If you are not using windows, the filenames will be different. You can create a shortcut for the above file to make it easier to run
+
+Go to File -> New Module, and create a new module containing the satellites to be tracked (NOAA 15, NOAA 18, and NOAA 19 for the current setup)
+
+Use the tabs at the top to navigate to the newly created  module
+
+Go to Edit-> Preferences -> Interfaces and select the "Rotators" tab. At the bottom click "add new" and name it "Needle", or some other name. Use Host localhost and port 4533, these should be default. set Az type to 0-180-360 if it isn't set by default. Min Az and Min El should be set to 0, Max Az should be set to 360 and Max El should be set to 90. 
+
+Click "Ok" twice and click the small box with the downward-facing triangle, it is in the top-right of the screen. Click "Antenna Control" and you should see Rotator Control window. This is where the tracking mechanism will be controlled from in GPredict.
+
+Go to Edit -> Preferences and in General select the "Ground Stations" tab. Click the "Add New" button and name the ground station location. Values in the boxes can be added manually or use the "Select" box beside the "Location" input to select your city (Ottawa) from the drop-down list. Click the "Ok" button twice.
+
+Click on the downward-facing triangle box and click "Configure". Under ground station, select the ground station you just created. Click OK. You can come back to this screen later if you travel and need to change the ground station. The location of the active ground station should now be visible in blue on the map. Close the rotator controller window for now.
+
+Finally, go to Edit->Update TLE and click the "Network" button. If you want to use a custom TLE, you can select the "from local files" option. GPredict is now set up.
+
+
+Hamlib:
+
+Download hamlib-w32-3.3.zip from https://github.com/Hamlib/Hamlib/releases/tag/3.3, then unzip the file.
+
+To add Hamlib to the command prompt path, the instructions found below are followed: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
+
+Here is a synopsis of the article:
+Type 'env' into the windows search bar. Open the "Edit the system environment variables"
+
+Click the "environment variables" button, then in the "system variables" box (the bottom section), find the line marked "Path".
+
+Click "Edit", then click "New" in the new window and add the path to the bin folder in the unzipped Hamlib folder. Click "Ok" on all boxes to close them and save changes.
+
+To test, open command prompt and type "rotctl -m 202". If "rot_open: error = IO error" appears, Hamlib has been correctly added to path and the user can continue. If a "rotctl -m 202' is not recognized ..." error occurs, Hamlib has not been added to the path correctly. To stop Hamlib from running, use [ctrl+c]. 
+
+Arduino:
+
+Arduino is not required for ground station operation, but to update and change the firmware, it is required. If you will be exclusively operating the ground station, and not troubleshooting or updating, this section can be skipped.
+
+First, download the most recent version of the Arduino IDE from: https://www.arduino.cc/en/software
+
+Run the Arduino installer and then run Arduino IDE or, if you downloaded the zip file, unzip and run the Arduino. Follow all prompts to install.
+
+Download Firmware-V7-Station and Firmware-V7-Control folders from: 
+https://drive.google.com/drive/folders/1_mGeXHvD767Y_F4kOCCn3JewFk-6yLHJ    or
+
+
+Connect the Arduino Nano to the computer, open the Firmware-V7-Control .ino file using the Arduino IDE.
+
+Under the "Tools" tab, select "Arduino Nano" from board selection, then the COM that the Nano is attached to from the port selection. Note this COM port for operation.
+
+In the top-left corner of the window, click the upload button (an arrow pointing to the right). Wait until the IDE has finished uploading and then unplug the Nano. Ensure that all required libraries are installed, using the library manager. Follow the docstring in whichever version of the firmware you are using for further instructions.
+
+Plug in the Arduino Mega connected to the Tracking Station, and open the Firmware-V7-Station .ino file with the Arduino IDE. Using the Tools tab, select "Arduino Mega" from the boards selection and change the Port to the one connected to the Mega.
+
+Upload the sketch to the Arduino Mega, and then unplug the Mega.
+
+Testing:
+
+Turn the tracking system on, with the Mega not connected to the control computer. Plug the Arduino Nano in to the control computer and open the Arduino IDE. Ensure that the Port is set to whatever port the Nano is using, then click on the "Serial Monitor" button, also shown in the "Tools" tab.
+
+In the text box at the top of the serial monitor, enter the command "AZ EL". If the response shown is "0.0 0.0", the control software has been installed correctly. To test if the connection between the control computer and the tracking station is working, use the command "AZ2 EL0". The station should move two degrees in the azimuth axis. If both of these commands work, the Arduino part of the system is working correctly.
+
+To test the full system, start by launching GPredict and opening a command prompt window. With the Arduino Nano connected, and the tracking station plugged in, enter the following command into command prompt: "rotctld -m 202 -r COMX -s 9600". In GPredict, open the rotator control window and click the "engage" button. Use the up and down arrows to control the tracking system. To track a satellite, select it from the drop-down menu and click the "Track" button.

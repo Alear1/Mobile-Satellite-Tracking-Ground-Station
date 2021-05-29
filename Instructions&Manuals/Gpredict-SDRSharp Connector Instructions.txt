@@ -1,0 +1,27 @@
+Instructions for installing the Gpredict-SDRSharp connector plugin
+Carleton University
+May 27, 2020
+August Lear
+
+Gpredict Website: http://gpredict.oz9aec.net/
+SDRSharp Website: https://airspy.com/download/
+Microsoft .NET Website: https://dotnet.microsoft.com/	(NOTE: The x86 version of MS .NET is required)
+August Lear Github:
+
+PLUGIN DOWNLOAD AND SETUP:
+
+1) Download the SDRSharp.GpredictConnector from Alex Wahl's Github: https://github.com/alexwahl/SDRSharp.GpredictConnector/releases/download/v0.3/SDRSharp.GpredictConnector-v0.3.zip
+
+2) Extract the downloaded file into the sdrsharp-x86/Plugins folder. Read the .readme file for more information. At the end of this step the sdrsharp-x86/Plugins folder should contain a folder labelled SDRSharp.GpredictConnector-v0.3. Inside the SDRSharp.GpredictConnector-v0.3 folder there should be an SDRSharp.GpredictConnector.dll file, as well as some MD files.
+
+3) In the sdrsharp-x86 folder, find the plugins.xml file. Open this file and create a new cell row above the </sharpPlugins> cell. Copy-paste the following into the cell: 
+<add key =”DDE Tracking Client” value =”SDRSharp.DDETracker.DdeTrackingPlugin,SDRSharp.DDETracker” /> 	
+Make sure that the <> symbols are included.
+
+4) Save and exit the .xml file. Run SDRSharp and use the menu button (three horizontal bars) in the top-left of the UI. Find the GpredictConnector* tab and open it. If there is no GpredictConnector* tab, the plugin has not been installed correctly.
+
+5) Click the "enable" radio button to enable the plugin. Note that the "Server Status" section should say "listening on port xxxx", where xxxx is the port. By default, this port is 4532.
+
+GPREDICT SETUP:
+
+1) Gpredict should be downloaded, with a useable module set up for tracking. For instructions on setting up a GPredict module, refer to the instructions entitled "
