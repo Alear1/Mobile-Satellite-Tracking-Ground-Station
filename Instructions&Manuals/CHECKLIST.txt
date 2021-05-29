@@ -1,5 +1,8 @@
 Checklist of items for sat tracking as of 2021-05-29
 
+ALL:
+-Carleton University Campus access form: https://itsjira.carleton.ca/servicedesk/customer/portal/12/create/270
+
 AUGUST:
 -Tracking System
 -Tripod
