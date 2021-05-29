@@ -22,6 +22,7 @@ AUGUST:
 ===(Optional)===
 -V Dipole antenna
 -V Dipole stick
+-Little table
 
 
 ALEX:
