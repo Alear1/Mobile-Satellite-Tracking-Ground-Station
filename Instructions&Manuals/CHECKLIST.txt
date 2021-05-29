@@ -1,1 +1,30 @@
--things
+Checklist of items for sat tracking as of 2021-05-29
+
+AUGUST:
+-Tracking System
+-Tripod
+-Horizontal Arms
+-Battery and/or Power Supply
+-Arduino NANO for remote control
+-USB Cable to connect with UNO and MEGA
+-USB Cable to connect with NANO
+-Pocket knife or flat-head screwdriver
+-Pliers
+-Box of misc machine screws and allen keys
+-Torpedo level
+-Laptop Computer and power supply
+-SDR
+-50ft coax cable
+-Short coax cable
+===(Optional)===
+-V Dipole antenna
+-V Dipole stick
+
+
+ALEX:
+
+
+HOOMAN:
+
+OTHER:
+
