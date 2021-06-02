@@ -1,6 +1,6 @@
 Instructions for installing the Gpredict-SDRSharp connector plugin
 Carleton University
-May 27, 2020
+May 31, 2020
 August Lear
 
 Gpredict Website: http://gpredict.oz9aec.net/
