@@ -30,6 +30,8 @@ GPREDICT SETUP:
 
 3) Give the radio a name (like Radio McRadioFace) and ensure that Host is localhost and the port used is the same as the one seen in step 5 of PLUGIN DOWNLOAD AND SETUP. The radio type can be RX only, PTT status can be None, VFO Up/Down is Not Applicable, LO Down is 0 and LO Up is 0. Click "OK" to create the radio.
 
+4) If using a newer version of Gpredict (v>2.0) is being used, go to Edit and click the Update Transponder Data.
+
 COMBINED OPERATION:
 
 *Assuming all software is closed at the beginning of this section.
