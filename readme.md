@@ -27,6 +27,7 @@ Improvements for pointing mechanism:
 
 
 Far-future:
+
 -encoders on motor shafts
 
 -potentiometer or other electronic level built into antenna mount
