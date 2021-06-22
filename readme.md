@@ -5,7 +5,8 @@ Documentation and firmware for the Carleton Mechanical and Aerospace Satellite T
 
 Improvements for pointing mechanism:
 
--Find north better \n
+-Find north better
+
 -make wiring nicer
 -build weather sheild for the mechanism
 -convert all structural mount brackets to weld-nut size bolts
