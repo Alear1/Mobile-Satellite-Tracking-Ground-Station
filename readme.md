@@ -17,6 +17,10 @@ Improvements for pointing mechanism:
 
 -convert AZ shaft gear to containin nuts
 
+-improve gear profile
+
+-new antenna adapters
+
 -(software) create more data in struct for data passing, specifically for current state
 
 -(software) connect LCD and buttons to remote control nano for direct interaction with system
@@ -33,4 +37,6 @@ Far-future:
 -potentiometer or other electronic level built into antenna mount
 
 -limit switches
+
+-create documentation for the sun pointing calibration method
 
