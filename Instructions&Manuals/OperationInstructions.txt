@@ -2,8 +2,50 @@ Author: August A. Lear
 Date: 22 June 2021
 For Carleton University Ground Station Project. Student no. 101075941
 
+FOR ASSEMBLY:
+
 1) Select a flat place to put the tripod, free of debris and loose rocks/gravel
 
 2) Place the tripod in the selected space. Open the tripod legs to their maximum width, then tighten the bottom knob on the tripod to fix them in place
 
-3)
+3) Insert the pin into the second hole from the top of the tripod shaft
+
+4) Remove the nut and bolt from the rotator AZ shaft. Place the rotator AZ shaft onto the tripod shaft and align the holes at the bottom of the rotator shaft with the top holes of the tripod shaft. Re-insert the bolt and tighten the nut.
+
+5) (If guy wires exist) thread guy wires through the top three holes in the AZ shaft/tripod shaft and make tight.
+
+6) Slide ABS pipe labelled "Blue" onto the white connector, on the side of the rotator which has blue tape in the EL bearing. Align the holes and thread the bolt through the ABS pipe, connector and aluminum EL beam. If the white connector moves while attempting to place the ABS pipe over it, remove the white connector from the aluminum EL beam. Thread the bolt through one side of the ABS pipe and halfway through one hole of the white connector, such that the bolt holds the connector in place but does not protrude into the inner diameter of the connector. Then place the ABS pipe and connector onto the aluminum pipe, align the holes, and thread the bolt the rest of the way through.
+
+7) Repeat for the other side, with the ABS pipe labelled "Red"
+
+8) Assemble the antennas on the ground. Ensure that the antenna mount is attached as close to the antenna's center of mass as possible.
+
+9) Unscrew the antenna mount set-screws until they no longer protrude past the inner nut into the mount inner diameter. Position the mount with antenna towards the ABS pipe, and ensure the the ABS pipe is supported. While pushing the antenna mount onto the ABS pipe, it may be required to hold the set-screws, so that the nut and set screw do not slide into the antenna mount inner diameter. If the antenna mount goes onto the ABS pipe about 75% of the way, but will go no further, the most likely cause is that the set-screw nut has slid into the inner diameter and is obstructing the movement of the antenna mount.
+
+10) Repeat for the antenna on the other side. If only one antenna is being used, it is suggested that a counter weight be applied to the other ABS pipe such that the center of mass of the EL structure is close to the center of the rotator.
+
+11) Adjust the antennas until they are as parallel as possible. A level can be helpful for this step. It is suggested that if the antennas are not attached at their center of weight a counterweight be added to reduce holding torque on the EL drivetrain.
+
+12) Tighten the antenna mount set-screws.
+
+13) Connect RF cables to the antennas by passing them over the EL beam and connecting them to the side of the rotator mechanism. The reader is reminded that in paying out RF cable there should be some slack left in case of tripping, and to that slack should also be added the length necessary to raise the rotator to action height.
+
+14) Attach RF cables to computers.
+
+15) Point the rotator as towards North as possible, making sure to pick the system up by the fixed part of the tripod (not the shaft with holes, and not by the rotator)
+
+16) Ensure the battery is plugged in, and turn the rotator on. Using the instructions found XYZHEREXYZJLADKJLANDFLANDLFSDDFAD, initialize the rotator and perform calibration tests. These tests include pointing the antennas at the direction of the sun.
+
+17) Bring ground station to action height. It is suggested that two individuals be present for this step as the system must be lifted up slightly by one, the tripod pin removed, and then raised to action height. The pin must be re-inserted into the holes marked with triangles, and then the system must be rotated until the pin drops into it's detent. 
+
+18) Track satellites!
+
+FOR DISASSEMBLY:
+
+1) Do everything in the previous steps backwards and/or upside down
+
+ADDITIONAL CARE:
+
+1) If the system is not aligned properly, use the software to align
+
+2) If either axis is loose, try tightening the gear set-screws
