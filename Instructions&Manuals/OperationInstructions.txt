@@ -2,7 +2,7 @@ Author: August A. Lear
 Date: 22 June 2021
 For Carleton University Ground Station Project. Student no. 101075941
 
-FOR ASSEMBLY:
+FOR ASSEMBLY (min 1 hr):
 
 1) Select a flat place to put the tripod, free of debris and loose rocks/gravel
 
@@ -40,7 +40,14 @@ FOR ASSEMBLY:
 
 18) Track satellites!
 
-FOR DISASSEMBLY:
+SOFTWARE SETUP:
+
+
+SOFTWARE SHUTDOWN:
+
+1) 
+
+FOR DISASSEMBLY (min 30 mins):
 
 1) Do everything in the previous steps backwards and/or upside down
 
