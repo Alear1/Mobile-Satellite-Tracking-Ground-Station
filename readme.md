@@ -7,7 +7,7 @@ Improvements for pointing mechanism:
 
 -Find north better
 
--make wiring nicer
+DONE-make wiring nicer
 
 -build weather sheild for the mechanism
 
