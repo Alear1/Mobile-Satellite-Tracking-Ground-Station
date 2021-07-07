@@ -21,6 +21,8 @@ Improvements for pointing mechanism:
 
 -new antenna adapters
 
+-Add a temperature sensor (for now we have the infrared temperature sensors)
+
 -(software) create more data in struct for data passing, specifically for current state
 
 -(software) connect LCD and buttons to remote control nano for direct interaction with system
