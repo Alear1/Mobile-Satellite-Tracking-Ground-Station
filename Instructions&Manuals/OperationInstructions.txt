@@ -42,9 +42,17 @@ FOR ASSEMBLY (min 1 hr):
 
 SOFTWARE SETUP:
 
-1) Plug the remote control Arduino Nano with the wireless transciever into the PC
+1) Plug the remote control Arduino Nano with the wireless transciever into the PC. Plug the SDR into your computer.
 
 2) If installed, run track.bat to start all required systems and connect to the remote control Arduino Nano and proceed to step 3. If not installed, use the steps marked with letters below.
+
+2a) Run GPredict. Run SDR#.
+
+2b) Open a command line and enter the following (this will fail nearly 100% of the time): rotctld -m 202 -s 9600 -r COM1
+
+2c) If the above fails to connect to Hamlib, run the same command using COM2 instead of COM1. You will know if a connection has been established if the following error does NOT appear after 5 or more seconds: "rot_open: error = IO error", and you can no longer type in the command line.
+
+2d) Re-run the command until a connection is made, incrementing upwards by one each time. If you get to COM8, either the computer has a truly large number of USB and serial ports, or something else is wrong.
 
 3) In SDR#, open the "GpredictConnector*" tab, and check the enable box to start listening for GPredict.
 
@@ -57,7 +65,13 @@ SOFTWARE SETUP:
 
 SOFTWARE SHUTDOWN:
 
-1) 
+1) In the GPredict Rotator Control window, disengage the track function by clicking "Track". Then disable the system by clicking "Engage". Note that if tracking is not disengaged before the satellite moves below the horizon, the rotator will automatically point at the azimuth of AOS of the next pass. Close GPredict.
+
+2) In SDR#, ensure that the recording has been stopped, and saved in the correct location (default is the sdrsharp x86 folder). Close SDR#.
+
+3) Kill the HamLib rotctld daemon by selecting whichever command line it's running in and entering <ctrl + c> twice.
+
+4) Unplug the SDR and remote control Arduino Nano.
 
 FOR DISASSEMBLY (min 30 mins):
 
