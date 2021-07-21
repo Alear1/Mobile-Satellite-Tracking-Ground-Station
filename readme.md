@@ -5,6 +5,10 @@ Documentation and firmware for the Carleton Mechanical and Aerospace Satellite T
 
 Improvements for pointing mechanism:
 
+-Sighting scope/piece of pipe for the antenna booms
+
+-Redesign AZ motor mount
+
 -Find north better
 
 DONE-make wiring nicer
