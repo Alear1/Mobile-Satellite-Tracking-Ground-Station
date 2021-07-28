@@ -11,19 +11,13 @@ Improvements for pointing mechanism:
 
 -Find north better
 
-DONE-make wiring nicer
-
 -build weather sheild for the mechanism
 
 -convert all structural mount brackets to weld-nut size bolts
 
-DONE-convert AZ motor gear to metal mount
-
 -convert AZ shaft gear to containin nuts
 
 -improve gear profile
-
-DONE-new antenna adapters
 
 -Add a temperature sensor (for now we have the infrared temperature sensors)
 
@@ -46,3 +40,10 @@ Far-future:
 
 -create documentation for the sun pointing calibration method
 
+Completed:
+
+-make wiring nicer
+
+-convert AZ motor gear to metal mount
+
+-new antenna adapters
