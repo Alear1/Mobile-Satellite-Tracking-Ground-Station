@@ -17,13 +17,13 @@ DONE-make wiring nicer
 
 -convert all structural mount brackets to weld-nut size bolts
 
--convert AZ motor gear to metal mount
+DONE-convert AZ motor gear to metal mount
 
 -convert AZ shaft gear to containin nuts
 
 -improve gear profile
 
--new antenna adapters
+DONE-new antenna adapters
 
 -Add a temperature sensor (for now we have the infrared temperature sensors)
 
