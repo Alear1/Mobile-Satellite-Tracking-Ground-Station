@@ -5,6 +5,8 @@ Documentation and firmware for the Carleton Mechanical and Aerospace Satellite T
 
 Improvements for pointing mechanism:
 
+-Tripod leg levelling feet
+
 -Sighting scope/piece of pipe for the antenna booms
 
 -Redesign AZ motor mount
