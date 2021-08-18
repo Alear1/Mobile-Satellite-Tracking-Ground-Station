@@ -31,6 +31,8 @@ Improvements for pointing mechanism:
 
 -(software) kill or feed the gremlin that sometimes appears and gives the motors p-control
 
+-(software) create a replacement for hamlib with a GUI for direct user interference
+
 
 Far-future:
 
