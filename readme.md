@@ -7,6 +7,8 @@ Improvements for pointing mechanism:
 
 -Tripod leg levelling feet
 
+-Fix tripod wobble
+
 -Sighting scope/piece of pipe for the antenna booms
 
 -Redesign AZ motor mount
