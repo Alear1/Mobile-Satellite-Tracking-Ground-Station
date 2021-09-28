@@ -5,6 +5,8 @@ Documentation and firmware for the Carleton Mechanical and Aerospace Satellite T
 
 Improvements for pointing mechanism:
 
+-Wire Holder for Arduino
+
 -Tripod leg levelling feet
 
 -Fix tripod wobble
