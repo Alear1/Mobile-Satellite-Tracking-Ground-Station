@@ -74,6 +74,27 @@ blocks:
     coordinate: [1516, 11]
     rotation: 0
     state: true
+- name: cutoff_freq
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Cutoff Frequency
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: int
+    start: '4000'
+    step: '100'
+    stop: '80000'
+    value: '42000'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [14, 122]
+    rotation: 0
+    state: true
 - name: on_off_switch
   id: variable_qtgui_chooser
   parameters:
@@ -146,14 +167,14 @@ blocks:
     label0: NOAA 15
     label1: NOAA 18
     label2: NOAA 19
-    label3: ''
+    label3: Marine Weather
     label4: ''
     labels: '[]'
-    num_opts: '3'
+    num_opts: '4'
     option0: '137620000'
     option1: '137912500'
     option2: '137100000'
-    option3: '3'
+    option3: '162550000'
     option4: '4'
     options: '[0, 1, 2]'
     orient: Qt.QVBoxLayout
@@ -269,7 +290,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1114, 284]
+    coordinate: [1076, 349]
     rotation: 270
     state: true
 - name: analog_nbfm_rx_0
@@ -373,14 +394,14 @@ blocks:
     alias: ''
     bits_per_sample: '8'
     comment: ''
-    file: C:\Users\augus\Documents\DS\Radio\recording_3.wav
+    file: C:\Users\augus\Documents\DS\Radio\NOAA-18-20211003-1936.wav
     nchan: '1'
     samp_rate: '48000'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1437, 599]
+    coordinate: [1391, 553]
     rotation: 0
     state: enabled
 - name: low_pass_filter_0
@@ -390,7 +411,7 @@ blocks:
     alias: ''
     beta: '6.76'
     comment: ''
-    cutoff_freq: '6000'
+    cutoff_freq: cutoff_freq
     decim: '1'
     gain: '1'
     interp: '10'
