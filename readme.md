@@ -3,6 +3,8 @@
 Documentation and firmware for the Carleton Mechanical and Aerospace Satellite Tracking Ground Station Project.
 
 
+![alt text](https://github.com/[Alear1]/[Mobile-Satellite-Tracking-Ground-Station]/blob/[main]/image.jpg?raw=true)
+
 Improvements for pointing mechanism:
 
 -Wire Holder for Arduino
