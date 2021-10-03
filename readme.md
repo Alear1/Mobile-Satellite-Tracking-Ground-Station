@@ -3,7 +3,7 @@
 Documentation and firmware for the Carleton Mechanical and Aerospace Satellite Tracking Ground Station Project.
 
 
-![alt text](https://github.com/[Alear1]/[Mobile-Satellite-Tracking-Ground-Station]/blob/[main]/Space_Station.png?raw=true)
+![alt text](https://github.com/Alear1/Mobile-Satellite-Tracking-Ground-Station/main/Space_Station.png?raw=true)
 
 Improvements for pointing mechanism:
 
