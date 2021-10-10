@@ -15,3 +15,10 @@ make -j4
 sudo make install
 
 MAKE SURE TO SET THE SAMPLE RATE OF THE FLOWCHART TO THE SAMPLE RATE RECORDED
+
+Then for HRPT decoder on windows, download and extract: https://satsignal.eu/software/hrpt-reader.3.0.10.zip
+
+You will also need to download and extract https://satsignal.eu/software/runtimes-setup-2.2.zip
+Then, in the extracted folder for the runtime libraries run the exe and it will set up the runtime libraries.
+
+Finally, run HRPT decoder
