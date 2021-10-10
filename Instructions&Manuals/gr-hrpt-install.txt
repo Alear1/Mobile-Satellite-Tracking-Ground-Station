@@ -1,0 +1,15 @@
+go to https://gist.github.com/gbevan/8e583b9cf87aa3c58102251454fa48a6 and follow the instructions to install gnuradio 3.8
+
+use command sudo apt install gnuradio osmosdr to install osmosdr
+
+run following commands to install gr-hrpt:
+
+cd /usr/lib/x86_64-linux-gnu
+cp liborc-0.4.so.0 liborc-0.4.so
+cd ~/sdr/src/gnuradio
+git clone https://github.com/altillimity/gr-hrpt
+cd gr-hrpt
+mkdir build && cd build
+cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+make -j4
+sudo make install
