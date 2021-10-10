@@ -13,3 +13,5 @@ mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 make -j4
 sudo make install
+
+MAKE SURE TO SET THE SAMPLE RATE OF THE FLOWCHART TO THE SAMPLE RATE RECORDED
