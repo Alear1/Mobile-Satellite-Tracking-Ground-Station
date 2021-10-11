@@ -1,0 +1,1 @@
+Guide to using the NOAA CLASS data repository: https://www.satsignal.eu/software/Using-CLASS.pdf
