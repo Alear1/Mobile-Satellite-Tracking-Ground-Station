@@ -1,1 +1,3 @@
 Guide to using the NOAA CLASS data repository: https://www.satsignal.eu/software/Using-CLASS.pdf
+
+For getting gpredict doppler to work with GNU radio in windows: infeasible https://lists.gnu.org/archive/html/discuss-gnuradio/2016-07/msg00108.html
