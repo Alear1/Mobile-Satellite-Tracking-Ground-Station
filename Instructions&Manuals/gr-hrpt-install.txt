@@ -22,4 +22,5 @@ Then for HRPT decoder on windows, download and extract: https://satsignal.eu/sof
 You will also need to download and extract https://satsignal.eu/software/runtimes-setup-2.2.zip
 Then, in the extracted folder for the runtime libraries run the exe and it will set up the runtime libraries.
 
+Before running the tynet hrpt decoders, remove the "input filename" parameter block and the "output filename" parameter block.
 Finally, run HRPT decoder
