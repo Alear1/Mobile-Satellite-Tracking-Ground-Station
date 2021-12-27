@@ -1,0 +1,50 @@
+Installation guide for leanHRPT decoder and demodulator
+
+leanHRPT Demodulator github: https://github.com/Xerbo/LeanHRPT-Demod
+
+leanHRPT Decoder github: https://github.com/Xerbo/LeanHRPT-Decode
+
+
+NOTE: the leanHRPT Demodulator can be used to receive and demodulate a signal LIVE.
+
+LINUX Guide (tested on Ubuntu 20.04):
+
+First, for the decoder:
+
+0) run the following command in the command line: sudo apt install soapysdr-module-all
+
+1) Save the following into the folder of your choosing: https://github.com/Xerbo/LeanHRPT-Decode/releases/download/v0.5.1/LeanHRPT_Decode-x86_64-hotfix.AppImage
+
+2) Go into the folder containing LeanHRPT_Decode-x86_64-hotfix.AppImage and enter the following command: sudo chmod a+x LeanHRPT_Decode-x86_64-hotfix.AppImage
+
+3) Double-click or run LeanHRPT_Decode-x86_64-hotfix.AppImage to test that it works
+
+Next, for the demodulator:
+
+1) Save the following into the folder of your choosing: https://github.com/Xerbo/LeanHRPT-Demod/releases/download/v0.1.2/LeanHRPT_Demod-x86_64.AppImage
+
+2) Go into the folder containing LeanHRPT_Demod-x86_64.AppImage and enter the following command: sudo chmod a+x LeanHRPT_Demod-x86_64.AppImage
+
+3) Double-click or run LeanHRPT_Demod-x86_64.AppImage to test that it works
+
+To get an image from an SDR# recording:
+
+1) Set the demodulator to receive WAV files (as output by the SDR# record function)
+
+2) SDR# only outputs recordings in 1.95 Gb files, which means one pass can be made up of 5 or 6 individual .wav recording files. For each recording file, set
+  the input file in the demodulator as that file, then set the output file to something simple (ex: A1 for the first output).
+  
+3) Run the demodulator
+
+4) Now set the input file to the next .wav recording file and MAKE SURE to set the output file as a different output file (ex: A2 for the second output).
+  Then run the demodulator again.
+
+5) Continue iterating through the recording files, changing the names of the output files as you go.
+
+6) Once the last recording .wav file has been demodulated, open the command line and navigate to the folder where the output files have been saved (The loacation
+  of examples A1, A2, etc.)
+  
+7) Run the following command to combine all the files (Using A as the example): cat A1 A2 A3 A4 > A.bin
+  -Note that the newly created file A.bin MUST have the .bin file extension for the decoder to find it
+  
+8) Open the decoder and open the newly concatenated file. It should decode automatically.
