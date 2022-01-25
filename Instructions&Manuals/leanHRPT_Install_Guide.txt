@@ -48,3 +48,5 @@ To get an image from an SDR# recording:
   -Note that the newly created file A.bin MUST have the .bin file extension for the decoder to find it
   
 8) Open the decoder and open the newly concatenated file. It should decode automatically.
+
+!!!! IF NOT OPENING BECAUSE OF ERROR cannot find libSoapy: download and manually install soapysdr 0.7.3: https://github.com/pothosware/SoapySDR/releases/tag/soapy-sdr-0.7.2
