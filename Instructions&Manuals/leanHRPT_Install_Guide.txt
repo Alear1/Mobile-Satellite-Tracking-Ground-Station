@@ -50,3 +50,7 @@ To get an image from an SDR# recording:
 8) Open the decoder and open the newly concatenated file. It should decode automatically.
 
 !!!! IF NOT OPENING BECAUSE OF ERROR cannot find libSoapy: download and manually install soapysdr 0.7.3: https://github.com/pothosware/SoapySDR/releases/tag/soapy-sdr-0.7.2
+
+For live airspy demod:
+
+1) Follow the link to install SoapyAirspy: https://github.com/pothosware/SoapyAirspy/wiki
