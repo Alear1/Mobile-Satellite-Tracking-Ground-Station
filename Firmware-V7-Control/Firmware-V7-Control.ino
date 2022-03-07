@@ -228,6 +228,8 @@ void setTgt(){
     txData.az_target = txData.az_target + azBias;
   }
 
+  rxData.az_position = txData.az_target;
+
   indFrom = 'L';
   valLen = getLenBetween(inChar, indFrom, indTo);
   carry = getIndOf(inChar, indFrom);
@@ -236,6 +238,8 @@ void setTgt(){
   if((txData.el_target - elBias) < 0){txData.el_target = 0;}
   if((txData.el_target + elBias) > 90){txData.el_target = 90;}
   else{txData.el_target = txData.el_target + elBias;}
+
+  rxData.el_position = txData.el_target;
 
   if(Debug){
     Serial.println("Command Received ");
@@ -306,10 +310,13 @@ void getPos(){
   
   //Break positions into parts so the sprintf() function can work:
   azInt = int(rxData.az_position);                 //Whole part of the rxData.az_position float
+  Serial.println(azInt);
   azFlt = int((rxData.az_position - azInt) * 10);  //Decimal part of rxData.az_position float
+  Serial.println(azFlt);
   elInt = int(rxData.el_position);                 //Whole part of the rxData.el_position float
   elFlt = int((rxData.el_position - elInt) * 10);  //Decimal part of the rxData.el_position float
-
+  
+//  sprintf(outChar, "AZ%d.%d EL%d.%d", azInt, azFlt, elInt, elFlt);
   sprintf(outChar, "AZ%d.%d EL%d.%d", azInt, azFlt, elInt, elFlt);
   Serial.write(outChar);
   Serial.println("");
