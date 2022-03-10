@@ -61,7 +61,7 @@ RF24 radio(9,10); //CE, CSN
 
 //MISC DEFINITIONS
 bool err = 0; //tracks errors
-bool Debug = 0; //MAKE 1 FOR DEBUG, 0 FOR NORMAL(DEV)
+bool Debug = 1; //MAKE 1 FOR DEBUG, 0 FOR NORMAL(DEV)
 int azBias = 0; //pointing bias for az axis
 int elBias = 0; //pointing bias for el axis
 
@@ -112,11 +112,11 @@ void setup() {
   radio.setPALevel(RF24_PA_MIN);       //You can set this as minimum or maximum depending on the distance between the transmitter and receiver.
   radio.startListening();
   
-  /*
+ 
   //Begin communication to 16-position, 2 line lcd
   lcd.begin(16,2);
   lcd.noAutoscroll(); //prevents LCD from autoscrolling
-  */
+ 
   Serial.println("Control Transciever Active");
 }
 
@@ -162,6 +162,11 @@ void loop() {
       radio.startListening();
       txData.command = 0;
     }
+    else if(inChar[0] == 'T' && inChar[1] == 'e' && inChar[2] == 's' && inChar[3] == 't'){
+      Serial.println("Testing Position: AZ5.0 EL5.0");
+      Serial.println("AZ5.0 EL5.0");
+      }
+    
     // OTHER FUNCTIONS:
     else if (inChar[0] == 'M')
     { //TOGGLE POLARITY SWITCH 1
@@ -188,7 +193,7 @@ void loop() {
     timeOut();
     timeoutCount = 0;
   }
-  //lcdUpdate();  //update LCD
+  lcdUpdate();  //update LCD
   delay(1);
 }
 
@@ -228,6 +233,8 @@ void setTgt(){
     txData.az_target = txData.az_target + azBias;
   }
 
+  rxData.az_position = txData.az_target;
+
   indFrom = 'L';
   valLen = getLenBetween(inChar, indFrom, indTo);
   carry = getIndOf(inChar, indFrom);
@@ -237,12 +244,17 @@ void setTgt(){
   if((txData.el_target + elBias) > 90){txData.el_target = 90;}
   else{txData.el_target = txData.el_target + elBias;}
 
-  if(Debug){
+  rxData.el_position = txData.el_target;
+
+  if(Debug == 1){
+    Serial.println("");
     Serial.println("Command Received ");
-    Serial.println(valLen);
+//    Serial.println(valLen);
     Serial.print("AZ target is: ");
     Serial.println(txData.az_target);
-    Serial.println(inChar);
+    Serial.print("EL target is: ");
+    Serial.println(txData.el_target);
+//    Serial.println(inChar);
   }
 }
 
@@ -309,7 +321,7 @@ void getPos(){
   azFlt = int((rxData.az_position - azInt) * 10);  //Decimal part of rxData.az_position float
   elInt = int(rxData.el_position);                 //Whole part of the rxData.el_position float
   elFlt = int((rxData.el_position - elInt) * 10);  //Decimal part of the rxData.el_position float
-
+  
   sprintf(outChar, "AZ%d.%d EL%d.%d", azInt, azFlt, elInt, elFlt);
   Serial.write(outChar);
   Serial.println("");
