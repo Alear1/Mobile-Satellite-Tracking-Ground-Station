@@ -51,7 +51,15 @@ NO LCD on this one, the LCD would be on the control side
 #include <nRF24L01.h>
 #include <RF24.h>
 
-//USED PINS: A0,A1,8,9,14,25,26,27,29,35,37,39,48,49
+//USED PINS: A0,A1,8,9,14,25,26,27,29,35,37,39,48,49,2,3,18,19,20,21
+
+//ENCODER PIN DEFINITION
+#define pinENC1A 2
+#define pinENC1B 3
+#define pinENC2A 18
+#define pinENC2B 19
+#define pinENC3A 20
+#define pinENC3B 21
 
 //SENSOR PIN DEFINITION
 #define AZPOT A0 //Pin set for azimuth potentiometer
@@ -110,6 +118,47 @@ float Tolerance = 0.1;//raw tolerance for difference between tgt and pos(deg)
 float azBias = 0; //constant azimuth bias
 float elBias = 0; //constant elevation bias
 
+//Encoders
+volatile long countENC1 = 0;
+volatile long countENC2 = 0;
+volatile long countENC3 = 0;
+char enc1[] = "Encoder 1: ";
+char enc2[] = " || Encoder 2: ";
+char enc3[] = " || Encoder 3: ";
+
+//Elevation Encoder Functions
+void encISR_A1() {
+  bool A = digitalRead(pinENC1A);
+  bool B = digitalRead(pinENC1B);
+
+  if ((A == HIGH) && (B == LOW)) {
+    countENC1++;
+  } else if ((A == LOW) && (B == HIGH)) {
+    countENC1++;
+  } else if ((A == LOW) && (B == LOW)) {
+    countENC1--;
+  }
+    else if ((A == HIGH) && (B == HIGH)) {
+    countENC1--;
+  }
+}
+
+void encISR_B1() {
+  bool A = digitalRead(pinENC1A);
+  bool B = digitalRead(pinENC1B);
+
+  if ((B == HIGH) && (A == LOW)) {
+    countENC1--;
+  } else if ((B == LOW) && (A == HIGH)) {
+    countENC1--;
+  } else if ((B == LOW) && (A == LOW)) {
+    countENC1++;
+  }
+    else if ((B == HIGH) && (A == HIGH)) {
+    countENC1++;
+  }
+}
+
 //Radio:
 bool wireSelect = 1; //0 for Wired, 1 for wireless
 int skipLoops = 50; //number of loops to skip
@@ -151,6 +200,14 @@ void setup() {
   //The idea is to set up both the serial and wireless connections, so that switching can
   //happen on the fly. System is wireless by default
 
+  //Encoder Interrupt attachments
+  attachInterrupt(digitalPinToInterrupt(pinENC1A), encISR_A1, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(pinENC1B), encISR_B1, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(pinENC2A), encISR_A2, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(pinENC2B), encISR_B2, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(pinENC3A), encISR_A3, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(pinENC3B), encISR_B3, CHANGE);
+
   //Start serial connection
   Serial.begin(BAUDRATE);
   delay(250);
@@ -167,6 +224,12 @@ void setup() {
   pinMode(EL_LOWSTOP, INPUT);
   pinMode(POLARITY_SWITCH_1, OUTPUT);
   pinMode(POLARITY_SWITCH_2, OUTPUT);
+  pinMode(pinENC1A, INPUT_PULLUP);
+  pinMode(pinENC1B, INPUT_PULLUP);
+  pinMode(pinENC2A, INPUT_PULLUP);
+  pinMode(pinENC2B, INPUT_PULLUP);
+  pinMode(pinENC3A, INPUT_PULLUP);
+  pinMode(pinENC3B, INPUT_PULLUP);
 
   //Radio Setup
   radio.begin();
@@ -360,7 +423,12 @@ void setTgt(){
 void motorUpdate(){
   //With this system the pointing is always one second behind required.
   sensorPos();//update sensors
-  float dEl = rxData.el_target - txData.el_position;
+  if txData.el_position != countENC1{
+    float dEl = txData.el_position - countENC1;
+    }
+  else{
+    float dEl = rxData.el_target - txData.el_position;
+    }
   float azDist;
 
   azDist = abs(rxData.az_target - txData.az_position);
